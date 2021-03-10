@@ -4,7 +4,7 @@
     <button class="big-button" @click="generate_name">תן בי</button>
     <button class="big-button" @click="copy_text">העתק</button>
     <div style="height: 80px; width: 80px">
-      <a :href="'https://wa.me/972526556920?text=' + welcome +'&lang=he'"><img style="position: relative; left: 100px" src="https://img.icons8.com/doodle/344/whatsapp.png" /></a>
+      <a :href="'https://wa.me/?text=' + welcome +'&lang=he'"><img style="position: relative; left: 100px" src="https://img.icons8.com/doodle/344/whatsapp.png" /></a>
     </div>
   </div>
 </template>
