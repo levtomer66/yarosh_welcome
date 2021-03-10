@@ -100,7 +100,6 @@ button.big-button:active::before {
 </style>
 
 <script>
-  import VueClipboard from 'vue-clipboard2'
   export default {
     data() {
     return {
