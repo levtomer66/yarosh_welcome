@@ -33,7 +33,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [ "@nuxtjs/axios" ],
+  modules: [ "@nuxtjs/axios",  "nuxt-clipboard2" ],
 
   env: {
     CLOUDNAME: process.env.CLOUDNAME,

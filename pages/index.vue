@@ -1,7 +1,8 @@
 <template>
   <div  class="content countdown-timer">
-    <p>{{ name }}</p>
+    <p>{{ welcome }}</p>
     <button class="big-button" @click="generate_name">תן בי</button>
+    <button class="big-button" @click="copy_text">העתק</button>
   </div>
 </template>
 
@@ -99,10 +100,11 @@ button.big-button:active::before {
 </style>
 
 <script>
+  import VueClipboard from 'vue-clipboard2'
   export default {
     data() {
     return {
-        name: "כוחמיץ"
+        welcome: "יראש קטטר",
     }
   },
   created() {
@@ -110,16 +112,15 @@ button.big-button:active::before {
   },
   methods: {
     generate_name: function() {
-      var output1 = "אבגדהזחטכלמנסעפצקרשת".split('');
-      var output2 = "בגדזחטכלמנסעפצקרשת".split('');
-      var output3 = "בגדזחטכלמנסעפצקרשת".split('');
-      var output4 = "בגדזחטךלםןסףצקרשת".split('');
-      const let1 = Math.floor(Math.random() * output1.length);
-      const let2 = Math.floor(Math.random() * output2.length);
-      const let3 = Math.floor(Math.random() * output3.length);
-      const let4 = Math.floor(Math.random() * output4.length);
+      var list1 = ["יראש", "ימפריח"]
+      var list2 = ["יונים", "קטטר"]
+      const let1 = Math.floor(Math.random() * list1.length);
+      const let2 = Math.floor(Math.random() * list2.length);
 
-      this.name = output1[let1] + "ו" + output2[let2] + output3[let3] + "י" + output4[let4]
+      this.welcome = list1[let1] + " " + list2[let2]
+    },
+    copy_text: function () {
+      this.$copyText(this.welcome).then(x => console.log(x)).catch(e=>console.log(e))
     }
   }
 
