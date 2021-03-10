@@ -29,7 +29,7 @@
 }
 body {
   font-family: 'Amatic SC', 'OpenSans', sans-serif;
-  font-size: 7rem;
+  font-size: 6rem;
   line-height: 2;
   display: flex;
           align-items: center;
