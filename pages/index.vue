@@ -3,6 +3,9 @@
     <p>{{ welcome }}</p>
     <button class="big-button" @click="generate_name">תן בי</button>
     <button class="big-button" @click="copy_text">העתק</button>
+    <div style="height: 80px; width: 80px">
+      <a :href="'https://wa.me/972526556920?text=' + welcome +'&lang=he'"><img style="position: relative; left: 100px" src="https://img.icons8.com/doodle/344/whatsapp.png" /></a>
+    </div>
   </div>
 </template>
 
@@ -12,6 +15,10 @@
   max-width: 500px;
   margin: auto;
   text-align: right;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
 }
 :root {
   --backgroundColor: rgba(246, 241, 209);
