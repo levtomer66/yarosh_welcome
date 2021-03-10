@@ -121,11 +121,8 @@ button.big-button:active::before {
   },
   methods: {
     generate_name: async function() {
-      
-      
       const let1 = Math.floor(Math.random() * this.list1.length);
       const let2 = Math.floor(Math.random() * this.list2.length);
-
       this.welcome = "י" + this.list1[let1] + " " + this.list2[let2]
     },
     copy_text: function () {
