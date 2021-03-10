@@ -111,19 +111,22 @@ button.big-button:active::before {
     data() {
     return {
         welcome: "יראש קטטר",
+        list1: [],
+        list2: []
     }
   },
-  created() {
-    
+  async created() {
+    this.list1 = (await this.$axios.get("/nouns.txt")).data.split('\n')
+    this.list2 = (await this.$axios.get("/adjectives.txt")).data.split('\n')
   },
   methods: {
-    generate_name: function() {
-      var list1 = ["יראש", "ימפריח"]
-      var list2 = ["מלוכלך","מטונף","מזוהם","דפוק","טיפש","חרא","זרע","גועל","זרג","טיפשון","אפס","תעחת","איידס","בהמה","מנוש","מחורבן","יפה","מעלף","מחרבן","משתין בקיר","משתין","דפקט","זנותי","ערסי","ערבי","מחורטט","שנוא","מאוס","משוגל","מזוין","מזויף","מוריק","יורק","ממציץ","מוצץ","בוזח","בולע","טלבצ","מחשש","מחושש","מפרלל","מופליל","מנשנש","נשנש","מגזים","מגרה","מפתה","מכער","גולמני","מתנסר","מהונדס","מהונדס גנטית","מתקרחן","עושה"]
-      const let1 = Math.floor(Math.random() * list1.length);
-      const let2 = Math.floor(Math.random() * list2.length);
+    generate_name: async function() {
+      
+      
+      const let1 = Math.floor(Math.random() * this.list1.length);
+      const let2 = Math.floor(Math.random() * this.list2.length);
 
-      this.welcome = list1[let1] + " " + list2[let2]
+      this.welcome = "י" + this.list1[let1] + " " + this.list2[let2]
     },
     copy_text: function () {
       this.$copyText(this.welcome).then(x => console.log(x)).catch(e=>console.log(e))
